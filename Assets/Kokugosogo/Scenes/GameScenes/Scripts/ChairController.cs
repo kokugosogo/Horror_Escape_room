@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DoorController : MonoBehaviour
+public class ChairController : MonoBehaviour
 {
     //SearchAreaに入っているか
     private bool isNear;
@@ -11,7 +11,7 @@ public class DoorController : MonoBehaviour
     void Start()
     {
         isNear = false;
-        animator = transform.parent.GetComponent<Animator>();
+        animator = transform.GetComponent<Animator>();
     }
 
     // Update is called once per frame
@@ -19,9 +19,9 @@ public class DoorController : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.F) && isNear)
         {
-            animator.SetBool("Open", !animator.GetBool("Open"));
+            animator.SetBool("Out", !animator.GetBool("Out"));
             //Debug.Log("F");
-            //Debug.Log(animator.GetBool("Open"));
+            //Debug.Log(animator.GetBool("Out"));
         }
     }
 
